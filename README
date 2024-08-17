@@ -1,0 +1,68 @@
+# AWS Resource Listing Script
+
+## Description
+
+This script automates the process of listing various AWS resources within an AWS account. It supports a range of AWS services and allows users to specify the AWS region and the service they want to query.
+
+## Supported AWS Services
+
+The script can list resources for the following AWS services:
+
+1. EC2
+2. RDS
+3. S3
+4. CloudFront
+5. VPC
+6. IAM
+7. Route53
+8. CloudWatch
+9. CloudFormation
+10. Lambda
+11. SNS
+12. SQS
+13. DynamoDB
+14. EBS
+
+## Prerequisites
+
+1. AWS CLI: Ensure that the AWS Command Line Interface (CLI) is installed on your system.
+2.   AWS CLI Configuration  : Make sure that the AWS CLI is configured with the necessary credentials and default region.
+
+## Usage
+
+To run the script, use the following command:
+
+```bash
+./aws_resource_list.sh <aws_region> <aws_service>
+```
+
+### Parameters
+
+- `<aws_region>`: The AWS region where the resources are located (e.g., `us-east-1`).
+- `<aws_service>`: The AWS service for which you want to list resources (e.g., `ec2`, `s3`).
+
+### Example
+
+To list EC2 instances in the `us-east-1` region, use:
+
+```bash
+./aws_resource_list.sh us-east-1 ec2
+```
+
+## Script Details
+
+The script performs the following checks and actions:
+
+1.   Argument Check: Validates that exactly two arguments (region and service) are provided.
+2.   AWS CLI Installation Check  : Verifies if the AWS CLI is installed.
+3.   AWS CLI Configuration Check  : Ensures the AWS CLI is properly configured.
+4.   Service Listing  : Based on the specified service, it executes the corresponding AWS CLI command to list resources.
+
+## Error Handling
+
+- If the AWS CLI is not installed or not configured, the script will prompt you to install or configure it.
+- If an invalid service is specified, the script will notify you to enter a valid service.
+
+## Contributing
+
+If you have suggestions or improvements for this script, feel free to create a pull request or open an issue.
